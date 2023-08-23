@@ -73,10 +73,6 @@ public class MyArrayList<T> implements MyList<T> {
         return new Object[0];
     }
 
-    public <T> T[] toArray(T[] a) {
-        return null;
-    }
-
     private void add(T t, Object[] dynamicData, int s) {
         if (s == dynamicData.length)
             dynamicData = grow();
@@ -146,40 +142,6 @@ public class MyArrayList<T> implements MyList<T> {
             return false;
         }
         fastRemove(es, i);
-        return true;
-    }
-
-    @Override
-    public boolean addAll(Collection<? extends T> c) {
-        Object[] x = c.toArray();
-        int numNew = x.length;
-        if (numNew == 0)
-            return false;
-        Object[] dynamicData;
-        final int s;
-        if (numNew > (dynamicData = this.dynamicData).length - (s = size))
-            dynamicData = grow(s + numNew);
-        System.arraycopy(x, 0, dynamicData, s, numNew);
-        size = s + numNew;
-        return true;
-    }
-
-    @Override
-    public boolean addAll(int index, Collection<? extends T> c) {
-        rangeCheckForAdd(index);
-        Object[] x = c.toArray();
-        int numNew = x.length;
-        if (numNew == 0)
-            return false;
-        Object[] dynamicData;
-        final int s;
-        if (numNew > (dynamicData = this.dynamicData).length - (s = size))
-            dynamicData = grow(s + numNew);
-        int numMoved = s - index;
-        if (numMoved > 0)
-            System.arraycopy(dynamicData, index, dynamicData, index + numNew, numMoved);
-        System.arraycopy(x, 0, dynamicData, index, numNew);
-        size = s + numNew;
         return true;
     }
 

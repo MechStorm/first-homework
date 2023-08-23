@@ -11,8 +11,6 @@ public interface MyList<T> {
     Object[] toArray();
     boolean add(T e);
     boolean remove(Object o);
-    boolean addAll(Collection<? extends T> c);
-    boolean addAll(int index, Collection<? extends T> c);
     void clear();
     T get(int index);
     void add(int index, T element);
