@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * realisation of own ArrayList, class MyArrayList
  * */
-public class MyArrayList<T> implements List<T> {
+public class MyArrayList<T> implements MyList<T> {
     private static final long serialVersionUID = 1L;
     /**
      * Create initial capacity for array
@@ -67,23 +67,13 @@ public class MyArrayList<T> implements List<T> {
         return grow(size + 1);
     }
 
-    @Override
-    public boolean contains(Object o) {
-        return false;
-    }
-
-    @Override
-    public Iterator<T> iterator() {
-        return null;
-    }
 
     @Override
     public Object[] toArray() {
         return new Object[0];
     }
 
-    @Override
-    public <T1> T1[] toArray(T1[] a) {
+    public <T> T[] toArray(T[] a) {
         return null;
     }
 
@@ -160,11 +150,6 @@ public class MyArrayList<T> implements List<T> {
     }
 
     @Override
-    public boolean containsAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
     public boolean addAll(Collection<? extends T> c) {
         Object[] x = c.toArray();
         int numNew = x.length;
@@ -198,16 +183,6 @@ public class MyArrayList<T> implements List<T> {
         return true;
     }
 
-    @Override
-    public boolean removeAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
-    public boolean retainAll(Collection<?> c) {
-        return false;
-    }
-
     /**
      * Implementation of clear method.
      */
@@ -231,33 +206,7 @@ public class MyArrayList<T> implements List<T> {
     }
 
     @Override
-    public T set(int index, T element) {
-        return null;
-    }
-
-
-    @Override
-    public int indexOf(Object o) {
-        return 0;
-    }
-
-    @Override
-    public int lastIndexOf(Object o) {
-        return 0;
-    }
-
-    @Override
     public ListIterator<T> listIterator() {
-        return null;
-    }
-
-    @Override
-    public ListIterator<T> listIterator(int index) {
-        return null;
-    }
-
-    @Override
-    public List<T> subList(int fromIndex, int toIndex) {
         return null;
     }
 

@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.ListIterator;
 
-public interface MyList<T> extends Collection<T> {
+public interface MyList<T> {
     int size();
     boolean isEmpty();
     Object[] toArray();

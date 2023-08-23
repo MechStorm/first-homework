@@ -14,7 +14,7 @@ public class Main {
         myArrayList.add(b2);
         Comparator<Book> byName = Comparator.comparing(Book::getBookName);
 //        myArrayList.sort(byName);
-//        myArrayList.quickSort(byName);
+        myArrayList.quickSort(byName);
 
 
         System.out.println(myArrayList.get(0));
