@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 class MyArrayListTest {
     private MyArrayList<String> myArrayList;
@@ -106,10 +106,10 @@ class MyArrayListTest {
         Assertions.assertTrue(isRemove);
 
         isRemove = myArrayList.remove(b4);
-        Assertions.assertEquals(true, isRemove);
+        Assertions.assertTrue(isRemove);
 
         isRemove = myArrayList.remove(b4);
-        Assertions.assertEquals(false, isRemove);
+        Assertions.assertFalse(isRemove);
         Assertions.assertEquals(2, myArrayList.size());
     }
 
@@ -164,7 +164,6 @@ class MyArrayListTest {
 
     @Test
     void myArrayListWithCustomCapacity() {
-        MyArrayList<Integer> list = new MyArrayList<>();
         Assertions.assertThrows(IllegalArgumentException.class, () -> new MyArrayList<>(-5));
     }
 
@@ -175,9 +174,13 @@ class MyArrayListTest {
         arr.add(2);
         arr.add(3);
 
-        MyArrayList<Integer> arrData = new MyArrayList<Integer>(arr);
+        MyArrayList<Integer> arrData = new MyArrayList<>(arr);
 
         Assertions.assertEquals(1, arrData.get(0));
         Assertions.assertEquals(3, arrData.size());
+    }
+    @Test
+    void testMain() {
+        Main.main(new String[]{"1, 2, 3"});
     }
 }

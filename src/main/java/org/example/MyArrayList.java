@@ -6,6 +6,7 @@ import java.util.*;
  * realisation of own ArrayList, class MyArrayList
  * */
 public class MyArrayList<T> implements MyList<T> {
+
     private static final long serialVersionUID = 1L;
     /**
      * Create initial capacity for array
@@ -65,12 +66,6 @@ public class MyArrayList<T> implements MyList<T> {
 
     private Object[] grow() {
         return grow(size + 1);
-    }
-
-
-    @Override
-    public Object[] toArray() {
-        return new Object[0];
     }
 
     private void add(T t, Object[] dynamicData, int s) {
@@ -168,10 +163,6 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
-    public ListIterator<T> listIterator() {
-        return null;
-    }
-
     public void sort(Comparator<? super T> c) {
         Arrays.sort((T[]) dynamicData, 0, size, c);
     }
