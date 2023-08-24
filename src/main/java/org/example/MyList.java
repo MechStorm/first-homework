@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Comparator;
-import java.util.ListIterator;
 
 public interface MyList<T> {
     int size();
@@ -16,14 +13,4 @@ public interface MyList<T> {
     T remove(int index);
 
     void sort(Comparator<? super T> c);
-
-//    default void sort(Comparator<? super T> c) {
-//        Object[] a = this.toArray();
-//        Arrays.sort(a, (Comparator) c);
-//        ListIterator<T> i = this.listIterator();
-//        for (Object e : a) {
-//            i.next();
-//            i.set((T) e);
-//        }
-//    }
 }

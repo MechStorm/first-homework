@@ -279,8 +279,8 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     * if last > first, then it looks for a partition index element in the array and sorts the left and right parts,
-     * leaving the partition index element between them
+     * if (last > first), then it looks for a partition index element in the array and sorts the left and right parts
+     * recursively
      * @param c an object that implements the Comparator interface
      * @param first first element of the array
      * @param last last element of the array
@@ -294,7 +294,7 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     /**
-     *
+     * defining a separator that will separate the left and right parts of the array
      * @param c an object that implements the Comparator interface
      * @param first first element of the array
      * @param last last element of the array
